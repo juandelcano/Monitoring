@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewData["Title"] = "LihatKinerja";
+    Layout = "~/Views/Layout/View.cshtml";
+}
+
+
+<div class="container-fluid">
+    <h1 class="h3 mb-2 text-gray-800">Kinerja Perbankan</h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Lihat Data Kinerja</h6>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col col-6 col-md-6">
+                    <div class="row">
+                        <div class="col-3 col-md-3">
+                            <center><label>Pilih Periode : </label></center>
+                        </div>
+                        <div class="col-6 col-md-6">
+                            <input name="startDate" id="periode" type="month" placeholder="Periode"/>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col col-6 col-md-6">
+                    <button class="btn btn-info" id="btnLihat" onclick="lihatData()">Lihat Data</button>
+                </div>
+            </div>
+            <div class="row" id="table" >
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataKinerja" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th rowspan="2"><center>Sandi Bank</center></th>
+                                <th>Kredit</th>
+                                <th colspan="2">Profitabilitas</th>
+                                <th>Likuiditas</th>
+                                <th>Efisiensi</th>
+                                <th>Resiliensi</th>
+                                <th colspan="6"><center>Rekap Komposit</center></th>
+                            </tr>
+                            <tr>
+                                <th>NPL</th>
+                                <th>ROE</th>
+                                <th>ROA</th>
+                                <th>LDR</th>
+                                <th>BOPO</th>
+                                <th>CAR</th>
+                                <th>Kr</th>
+                                <th>Pr</th>
+                                <th>Lk</th>
+                                <th>Ef</th>
+                                <th>Re</th>
+                                <th>Komposit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script {
+    <!-- Bootstrap core JavaScript-->
+
+    @*<script src="~/template/vendor/jquery/jquery.min.js"></script>*@
+    <script src="~/template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/template/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/template/js/sb-admin-2.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="~/template/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/template/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/template/js/demo/datatables-demo.js"></script>
+    <script src="~/js/sweetAlert.js"></script>
+    <script src="~/js/LihatData.js"></script>
+}
+

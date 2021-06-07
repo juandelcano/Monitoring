@@ -1,0 +1,77 @@
+﻿@model IEnumerable<KinerjaPerbankan>
+@{
+    ViewData["Title"] = "UploadDataKinerja";
+    Layout = "~/Views/Layout/View.cshtml";
+}
+
+<div class="container-fluid">
+    <h1 class="h3 mb-2 text-gray-800">Kinerja Perbankan</h1>
+
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Unggah Data Kinerja</h6>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col col-6 col-md-6">
+                    <div class="custom-file">
+                        <input accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" type="file" name="file" class="custom-file-input" id="fileInput" size="1" multiple required onchange="setName('fileInput')" />
+                        <label class="custom-file-label" id="custom-file-label" for="fileInput">Pilih berkas ...</label>
+                    </div>
+                </div>
+                <div class="col col-6 col-md-6">
+                    <button type="submit" class="btn btn-info" onclick="uploadFiles('fileInput')">Unggah Data</button>
+                </div>
+            </div>
+            <div class="row" id="table" hidden>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataKinerja" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Periode</th>
+                                <th>Sandi Bank</th>
+                                <th>Kredit Kol 1</th>
+                                <th>Kredit Kol 2</th>
+                                <th>Kredit Kol 3</th>
+                                <th>Kredit Kol 4</th>
+                                <th>Kredit Kol 5</th>
+                                <th>Laba</th>
+                                <th>Modal</th>
+                                <th>Total Aset</th>
+                                <th>ATMR</th>
+                                <th>Beban Operasional</th>
+                                <th width="50%">Pendapatan Operasional</th>
+                                <th>Dana Pihak Ketiga</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script {
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/template/vendor/jquery/jquery.min.js"></script>
+    <script src="~/template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/template/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/template/js/sb-admin-2.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="~/template/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/template/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="~/template/js/demo/datatables-demo.js"></script>
+    <script src="~/js/UploadFile.js"></script>
+    <script src="~/js/sweetAlert.js"></script>
+}
+
